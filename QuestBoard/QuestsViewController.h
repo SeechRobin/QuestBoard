@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestsViewController : UITableViewController
+@interface QuestsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+//@property (strong, nonatomic) IBOutlet UILabel *questNameLabel;
+
+@property (nonatomic, strong) UITableView *myTableView;
 
 @end

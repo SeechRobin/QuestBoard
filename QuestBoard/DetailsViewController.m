@@ -7,12 +7,20 @@
 //
 
 #import "DetailsViewController.h"
+#import "QuestsViewController.h"
 
-@interface DetailsViewController ()
-
-@end
+//@interface DetailsViewController ()
+//
+//@end
 
 @implementation DetailsViewController
+{
+    NSDictionary *questDetails;
+    NSString *whatQuest;
+}
+@synthesize questNameTextLabel = _questNameTextLabel;
+@synthesize questDetailsView = _questDetailsView;
+@synthesize quest = _quest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +31,25 @@
     return self;
 }
 
+- (void) setQuest:(NSString *)quest
+{
+    whatQuest = quest;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    NSString *d = whatQuest;
+     NSString *path = [[NSBundle mainBundle] pathForResource:@"questDetails" ofType:@"plist"];
+     questDetails = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    NSArray *details = [NSArray arrayWithArray:[questDetails objectForKey:d]];
+    
+    
+    _questNameTextLabel.text = d;
+    _questDetailsView.text = [details objectAtIndex:2];
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +57,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

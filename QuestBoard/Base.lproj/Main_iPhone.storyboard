@@ -52,7 +52,7 @@
                         <outlet property="loginButton" destination="qX2-Rd-0Nc" id="YJ1-3W-JCS"/>
                         <outlet property="password" destination="qn3-Td-aYO" id="tze-wc-VsP"/>
                         <outlet property="username" destination="22a-9K-IuJ" id="gO8-jU-LUS"/>
-                        <segue destination="XFn-Ix-e7r" kind="push" id="Drq-6g-3uY"/>
+                        <segue destination="XFn-Ix-e7r" kind="push" identifier="goLogin" id="Drq-6g-3uY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q47-Fd-8h1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,38 +63,39 @@
         <scene sceneID="HHY-u6-hzc">
             <objects>
                 <tableViewController storyboardIdentifier="details" id="XFn-Ix-e7r" customClass="QuestsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="KzC-6w-7NX">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="KzC-6w-7NX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="95" id="K6Y-KH-1LO">
-                                <rect key="frame" x="0.0" y="86" width="320" height="95"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestCell" rowHeight="96" id="K6Y-KH-1LO">
+                                <rect key="frame" x="0.0" y="86" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K6Y-KH-1LO" id="MfM-Gj-d2D">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EEM-nK-bTt" kind="push" identifier="goDetail" id="sJt-uH-GGq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="XFn-Ix-e7r" id="ild-tz-ymV"/>
                             <outlet property="delegate" destination="XFn-Ix-e7r" id="5Sl-Bc-VBj"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Quests" id="aIj-JA-67f"/>
-                    <connections>
-                        <segue destination="EEM-nK-bTt" kind="push" id="Hbw-p7-2Ca"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKV-SG-EZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1375" y="54"/>
         </scene>
-        <!--View Controller - Details-->
+        <!--Details View Controller - Details-->
         <scene sceneID="Dxt-xc-Ise">
             <objects>
-                <viewController id="EEM-nK-bTt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EEM-nK-bTt" customClass="DetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LHd-vw-Rde"/>
                         <viewControllerLayoutGuide type="bottom" id="MTz-iL-6rI"/>
@@ -102,13 +103,33 @@
                     <view key="view" contentMode="scaleToFill" id="HTH-hW-Mny">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QuestName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppa-lM-rMp">
+                                <rect key="frame" x="7" y="100" width="306" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDf-2S-iiz">
+                                <rect key="frame" x="0.0" y="178" width="320" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="B64-GU-A62"/>
+                    <connections>
+                        <outlet property="questDetailsView" destination="gDf-2S-iiz" id="3OL-s4-TmO"/>
+                        <outlet property="questNameTextLabel" destination="Ppa-lM-rMp" id="R1n-Sx-lpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxe-YK-eag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="54"/>
+            <point key="canvasLocation" x="1886" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z6-Vu-z2S">

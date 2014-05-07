@@ -40,8 +40,6 @@ BOOL authenticated;
 
 - (IBAction)loginButtonPressed:(id)sender {
     //Using hard-coded username and password
-    NSLog(@"%@", self.username.text);
-    NSLog(@"%@", self.password.text);
     if([self.username.text  isEqual: @"Lancelot"]&& [self.password.text  isEqual: @"arthurDoesntKnow"]){
        authenticated = YES;
     }

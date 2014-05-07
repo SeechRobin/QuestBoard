@@ -14,15 +14,17 @@
 		005A3AFB190BC3B0006CF891 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A3AFA190BC3B0006CF891 /* main.m */; };
 		005A3AFF190BC3B0006CF891 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A3AFE190BC3B0006CF891 /* AppDelegate.m */; };
 		005A3B02190BC3B0006CF891 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005A3B00190BC3B0006CF891 /* Main_iPhone.storyboard */; };
-		005A3B08190BC3B0006CF891 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A3B07190BC3B0006CF891 /* ViewController.m */; };
 		005A3B0A190BC3B0006CF891 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005A3B09190BC3B0006CF891 /* Images.xcassets */; };
 		005A3B11190BC3B0006CF891 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005A3B10190BC3B0006CF891 /* XCTest.framework */; };
 		005A3B12190BC3B0006CF891 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005A3AEE190BC3B0006CF891 /* Foundation.framework */; };
 		005A3B13190BC3B0006CF891 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005A3AF2190BC3B0006CF891 /* UIKit.framework */; };
 		005A3B1B190BC3B0006CF891 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 005A3B19190BC3B0006CF891 /* InfoPlist.strings */; };
 		005A3B1D190BC3B0006CF891 /* QuestBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A3B1C190BC3B0006CF891 /* QuestBoardTests.m */; };
+		00677D66191A4BBC00602FA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00677D65191A4BBC00602FA2 /* ViewController.m */; };
 		00DCCEEC190E431C0084FB15 /* QuestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DCCEEB190E431C0084FB15 /* QuestsViewController.m */; };
 		00DCCEEF190E43610084FB15 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DCCEEE190E43610084FB15 /* DetailsViewController.m */; };
+		00DCCEF2190FD8840084FB15 /* questList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00DCCEF1190FD8840084FB15 /* questList.plist */; };
+		00DCCEF4190FDC0D0084FB15 /* questDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00DCCEF3190FDC0D0084FB15 /* questDetails.plist */; };
 		00F6E26C190D1D7700199421 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F6E26B190D1D7700199421 /* LogInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,18 +50,20 @@
 		005A3AFD190BC3B0006CF891 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		005A3AFE190BC3B0006CF891 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		005A3B01190BC3B0006CF891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		005A3B06190BC3B0006CF891 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		005A3B07190BC3B0006CF891 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		005A3B09190BC3B0006CF891 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		005A3B0F190BC3B0006CF891 /* QuestBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		005A3B10190BC3B0006CF891 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		005A3B18190BC3B0006CF891 /* QuestBoardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuestBoardTests-Info.plist"; sourceTree = "<group>"; };
 		005A3B1A190BC3B0006CF891 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		005A3B1C190BC3B0006CF891 /* QuestBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestBoardTests.m; sourceTree = "<group>"; };
+		00677D64191A4BB100602FA2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		00677D65191A4BBC00602FA2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		00DCCEEA190E431C0084FB15 /* QuestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestsViewController.h; sourceTree = "<group>"; };
 		00DCCEEB190E431C0084FB15 /* QuestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestsViewController.m; sourceTree = "<group>"; };
 		00DCCEED190E43610084FB15 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		00DCCEEE190E43610084FB15 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		00DCCEF1190FD8840084FB15 /* questList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = questList.plist; sourceTree = "<group>"; };
+		00DCCEF3190FDC0D0084FB15 /* questDetails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = questDetails.plist; sourceTree = "<group>"; };
 		00F6E26A190D1D7700199421 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		00F6E26B190D1D7700199421 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,7 @@
 		005A3AE2190BC3B0006CF891 = {
 			isa = PBXGroup;
 			children = (
+				00DCCEF0190FD8590084FB15 /* Resources */,
 				005A3AF4190BC3B0006CF891 /* QuestBoard */,
 				005A3B16190BC3B0006CF891 /* QuestBoardTests */,
 				005A3AED190BC3B0006CF891 /* Frameworks */,
@@ -121,15 +126,15 @@
 		005A3AF4190BC3B0006CF891 /* QuestBoard */ = {
 			isa = PBXGroup;
 			children = (
+				00677D65191A4BBC00602FA2 /* ViewController.m */,
+				00677D64191A4BB100602FA2 /* ViewController.h */,
 				005A3AFD190BC3B0006CF891 /* AppDelegate.h */,
 				005A3AFE190BC3B0006CF891 /* AppDelegate.m */,
 				005A3B00190BC3B0006CF891 /* Main_iPhone.storyboard */,
-				00DCCEEA190E431C0084FB15 /* QuestsViewController.h */,
 				00DCCEED190E43610084FB15 /* DetailsViewController.h */,
 				00DCCEEE190E43610084FB15 /* DetailsViewController.m */,
+				00DCCEEA190E431C0084FB15 /* QuestsViewController.h */,
 				00DCCEEB190E431C0084FB15 /* QuestsViewController.m */,
-				005A3B06190BC3B0006CF891 /* ViewController.h */,
-				005A3B07190BC3B0006CF891 /* ViewController.m */,
 				00F6E26A190D1D7700199421 /* LogInViewController.h */,
 				00F6E26B190D1D7700199421 /* LogInViewController.m */,
 				005A3B09190BC3B0006CF891 /* Images.xcassets */,
@@ -165,6 +170,15 @@
 				005A3B19190BC3B0006CF891 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00DCCEF0190FD8590084FB15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00DCCEF1190FD8840084FB15 /* questList.plist */,
+				00DCCEF3190FDC0D0084FB15 /* questDetails.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +260,8 @@
 				005A3B0A190BC3B0006CF891 /* Images.xcassets in Resources */,
 				005A3B02190BC3B0006CF891 /* Main_iPhone.storyboard in Resources */,
 				005A3AF9190BC3B0006CF891 /* InfoPlist.strings in Resources */,
+				00DCCEF4190FDC0D0084FB15 /* questDetails.plist in Resources */,
+				00DCCEF2190FD8840084FB15 /* questList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00677D66191A4BBC00602FA2 /* ViewController.m in Sources */,
 				00F6E26C190D1D7700199421 /* LogInViewController.m in Sources */,
-				005A3B08190BC3B0006CF891 /* ViewController.m in Sources */,
 				00DCCEEC190E431C0084FB15 /* QuestsViewController.m in Sources */,
 				00DCCEEF190E43610084FB15 /* DetailsViewController.m in Sources */,
 				005A3AFF190BC3B0006CF891 /* AppDelegate.m in Sources */,
