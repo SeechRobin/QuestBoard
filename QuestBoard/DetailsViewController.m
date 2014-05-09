@@ -9,9 +9,6 @@
 #import "DetailsViewController.h"
 #import "QuestsViewController.h"
 
-//@interface DetailsViewController ()
-//
-//@end
 
 @implementation DetailsViewController
 {
@@ -40,16 +37,55 @@
 {
     [super viewDidLoad];
     
+    NSString *split;
+    NSString *splitGiver;
     NSString *d = whatQuest;
-     NSString *path = [[NSBundle mainBundle] pathForResource:@"questDetails" ofType:@"plist"];
-     questDetails = [[NSDictionary alloc] initWithContentsOfFile:path];
     
+    
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"questDetails" ofType:@"plist"];
+    questDetails = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSArray *details = [NSArray arrayWithArray:[questDetails objectForKey:d]];
-    
-    
     _questNameTextLabel.text = d;
     _questDetailsView.text = [details objectAtIndex:2];
+    
+    
+    
+    // The location of the quest.
+    split = [details objectAtIndex:3];
+    NSArray *splitArray = [split componentsSeparatedByString:@","];
+    
+    double lat = [[splitArray objectAtIndex:0] doubleValue];
+    double lon = [[splitArray objectAtIndex:1] doubleValue];
+
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lon);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region = {coord, span};
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.title = @"The Quest is Here!";
+    [annotation setCoordinate:coord];
+    [self.mapView setRegion:region];
+    [self.mapView addAnnotation:annotation];
+    
+
+    
+    
+    
 	
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
+    // Add an annotation
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = userLocation.coordinate;
+    point.title = @"Where am I?";
+    point.subtitle = @"I'm here!!!";
+    
+    [self.mapView addAnnotation:point];
 }
 
 - (void)didReceiveMemoryWarning

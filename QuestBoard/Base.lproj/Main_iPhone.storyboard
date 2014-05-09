@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="54"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="K8e-hV-b3Y">
             <objects>
-                <viewController id="9aD-a2-GPL" sceneMemberID="viewController">
+                <viewController id="9aD-a2-GPL" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KEX-H6-ZfG"/>
                         <viewControllerLayoutGuide type="bottom" id="Bc3-hZ-dSW"/>
@@ -96,6 +96,9 @@
                                     <segment title="Nuetral"/>
                                     <segment title="Evil"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlIndexChanged:" destination="9aD-a2-GPL" eventType="valueChanged" id="XGw-gK-xoE"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgF-6Z-fpe">
                                 <rect key="frame" x="105" y="174" width="114" height="30"/>
@@ -108,10 +111,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="ypt-qc-ZvD"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="pCS-ed-cKF" id="lfh-XM-67J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frb-JV-DwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2371" y="60"/>
+            <point key="canvasLocation" x="1886" y="-760"/>
         </scene>
         <!--Quests View Controller - Quests-->
         <scene sceneID="HHY-u6-hzc">
@@ -140,7 +146,21 @@
                             <outlet property="delegate" destination="XFn-Ix-e7r" id="5Sl-Bc-VBj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Quests" id="aIj-JA-67f"/>
+                    <navigationItem key="navigationItem" title="Quests" id="aIj-JA-67f">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="WgH-FJ-9kV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nox-ZC-GfE">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9aD-a2-GPL" kind="push" identifier="goSettings" id="Rla-1m-2Sv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKV-SG-EZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,33 +185,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDf-2S-iiz">
-                                <rect key="frame" x="0.0" y="178" width="320" height="182"/>
+                                <rect key="frame" x="0.0" y="129" width="320" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ILM-Ut-Gbv">
-                                <rect key="frame" x="0.0" y="411" width="328" height="157"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILM-Ut-Gbv">
+                                <rect key="frame" x="0.0" y="340" width="328" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="B64-GU-A62">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mu5-QS-Mn0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h8V-cI-x73">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="9aD-a2-GPL" kind="push" identifier="goSettings" id="9G9-UI-DO1"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Details" id="B64-GU-A62"/>
                     <connections>
+                        <outlet property="mapView" destination="ILM-Ut-Gbv" id="MxG-U7-vQK"/>
                         <outlet property="questDetailsView" destination="gDf-2S-iiz" id="3OL-s4-TmO"/>
                         <outlet property="questNameTextLabel" destination="Ppa-lM-rMp" id="R1n-Sx-lpN"/>
                     </connections>

@@ -45,7 +45,7 @@ BOOL authenticated;
     }
     else
     {
-       authenticated = YES;
+       authenticated = NO;
     }
     
     if(authenticated)  //BOOL Value assign True only if Login Success

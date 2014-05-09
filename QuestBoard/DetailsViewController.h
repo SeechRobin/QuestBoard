@@ -7,10 +7,14 @@
 //
 
 #import "ViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface DetailsViewController : ViewController
+
+@interface DetailsViewController : ViewController <MKMapViewDelegate>
+
+
 @property (strong, nonatomic) IBOutlet UILabel *questNameTextLabel;
 @property (strong, nonatomic) IBOutlet UITextView *questDetailsView;
-//@property (strong, nonatomic) NSString  *quest;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property(nonatomic) NSString *quest;
 @end

@@ -21,6 +21,8 @@
 		005A3B1B190BC3B0006CF891 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 005A3B19190BC3B0006CF891 /* InfoPlist.strings */; };
 		005A3B1D190BC3B0006CF891 /* QuestBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A3B1C190BC3B0006CF891 /* QuestBoardTests.m */; };
 		00677D66191A4BBC00602FA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00677D65191A4BBC00602FA2 /* ViewController.m */; };
+		00677D68191B6DB300602FA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00677D67191B6DB300602FA2 /* MapKit.framework */; };
+		00677D6B191B732400602FA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00677D6A191B732400602FA2 /* SettingsViewController.m */; };
 		00DCCEEC190E431C0084FB15 /* QuestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DCCEEB190E431C0084FB15 /* QuestsViewController.m */; };
 		00DCCEEF190E43610084FB15 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DCCEEE190E43610084FB15 /* DetailsViewController.m */; };
 		00DCCEF2190FD8840084FB15 /* questList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00DCCEF1190FD8840084FB15 /* questList.plist */; };
@@ -58,6 +60,9 @@
 		005A3B1C190BC3B0006CF891 /* QuestBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestBoardTests.m; sourceTree = "<group>"; };
 		00677D64191A4BB100602FA2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		00677D65191A4BBC00602FA2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00677D67191B6DB300602FA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		00677D69191B732400602FA2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		00677D6A191B732400602FA2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		00DCCEEA190E431C0084FB15 /* QuestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestsViewController.h; sourceTree = "<group>"; };
 		00DCCEEB190E431C0084FB15 /* QuestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestsViewController.m; sourceTree = "<group>"; };
 		00DCCEED190E43610084FB15 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00677D68191B6DB300602FA2 /* MapKit.framework in Frameworks */,
 				005A3AF1190BC3B0006CF891 /* CoreGraphics.framework in Frameworks */,
 				005A3AF3190BC3B0006CF891 /* UIKit.framework in Frameworks */,
 				005A3AEF190BC3B0006CF891 /* Foundation.framework in Frameworks */,
@@ -115,6 +121,7 @@
 		005A3AED190BC3B0006CF891 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00677D67191B6DB300602FA2 /* MapKit.framework */,
 				005A3AEE190BC3B0006CF891 /* Foundation.framework */,
 				005A3AF0190BC3B0006CF891 /* CoreGraphics.framework */,
 				005A3AF2190BC3B0006CF891 /* UIKit.framework */,
@@ -131,6 +138,8 @@
 				005A3AFD190BC3B0006CF891 /* AppDelegate.h */,
 				005A3AFE190BC3B0006CF891 /* AppDelegate.m */,
 				005A3B00190BC3B0006CF891 /* Main_iPhone.storyboard */,
+				00677D69191B732400602FA2 /* SettingsViewController.h */,
+				00677D6A191B732400602FA2 /* SettingsViewController.m */,
 				00DCCEED190E43610084FB15 /* DetailsViewController.h */,
 				00DCCEEE190E43610084FB15 /* DetailsViewController.m */,
 				00DCCEEA190E431C0084FB15 /* QuestsViewController.h */,
@@ -286,6 +295,7 @@
 				00DCCEEF190E43610084FB15 /* DetailsViewController.m in Sources */,
 				005A3AFF190BC3B0006CF891 /* AppDelegate.m in Sources */,
 				005A3AFB190BC3B0006CF891 /* main.m in Sources */,
+				00677D6B191B732400602FA2 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

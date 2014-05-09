@@ -15,11 +15,17 @@
 
 @implementation QuestsViewController
 {
-    NSArray *quests;
+    NSMutableArray *quests;
     NSDictionary *questsDictionary;
+    NSString *d;
+    
 }
+//NSString *alignment= @"EVIL";
 
 @synthesize myTableView;
+@synthesize align;
+
+NSString *alignment = @"NEUTRAL";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,24 +42,31 @@
     //Prevent user from going back to login screen
     self.navigationItem.hidesBackButton = YES;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"questList" ofType:@"plist"];
-    // Load the file content and read the data into arrays
-    //NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    quests = [[NSArray alloc] initWithContentsOfFile:path];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"questDetails" ofType:@"plist"];
+    questsDictionary = [[NSDictionary alloc] initWithContentsOfFile:path];
+    quests = [NSMutableArray array];
     
+    NSArray *details;
     
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    for(id key in questsDictionary){
+        details= [NSArray arrayWithArray:[questsDictionary objectForKey:key]];
+        NSLog(@"%@", [details objectAtIndex:1]);
+        if([alignment isEqualToString:@"NEUTRAL"])
+        {
+            [quests addObject:key];
+        }
+        if ([[details objectAtIndex:1]  isEqualToString:alignment] && ! [alignment isEqualToString:@"NEUTRAL"]){
+            [quests addObject:key];
+        }
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
 #pragma mark - Table view data source
@@ -163,6 +176,11 @@
     //[[self navigationController] pushViewController:detailController animated:YES];
 }
 
+- (void) setAlign:(NSString *)alignment
+{
+    alignment = align;
+}
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -176,9 +194,5 @@
         [[segue destinationViewController] setQuest:cell.textLabel.text];
     }
 }
-
-
-
-
 
 @end

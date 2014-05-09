@@ -12,5 +12,6 @@
 //@property (strong, nonatomic) IBOutlet UILabel *questNameLabel;
 
 @property (nonatomic, strong) UITableView *myTableView;
+@property(nonatomic) NSString *align;
 
 @end
