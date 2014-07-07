@@ -72,6 +72,4 @@ BOOL authenticated;
 {
     [sender resignFirstResponder];
 }
-
-
 @end
