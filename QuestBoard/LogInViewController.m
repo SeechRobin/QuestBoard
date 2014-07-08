@@ -39,7 +39,7 @@ BOOL authenticated;
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
-    //Using hard-coded username and password
+    //Using hard-coded username and password will use details stored on the server
     if([self.username.text  isEqual: @"Lancelot"]&& [self.password.text  isEqual: @"arthurDoesntKnow"]){
        authenticated = YES;
     }
